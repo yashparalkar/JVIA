@@ -1,7 +1,7 @@
 import customtkinter as ctk
 import webbrowser
 from PIL import Image
-from main import scrape_data
+from extractor import scrape_data
 import tkinter as tk
 
 # Declare status_label as a global variable
