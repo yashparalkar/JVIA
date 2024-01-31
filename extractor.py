@@ -1,3 +1,21 @@
+import customtkinter as ctk
+import webbrowser
+from PIL import Image
+from main import scrape_data
+import tkinter as tk
+
+# Declare status_label as a global variable
+global status_label
+
+def run_scraping():
+    codes = [int(code) for code in code_entry.get().split()]  # Convert space-separated codes to a list of integers
+    file_name = file_name_entry.get()
+    data_t = data_type_var.get()
+    status_label.configure(text="Data Extraction in process, please wait")
+    scrape_data(codes, file_name + ".xlsx", data_t)
+
+def open_claude():
+    webbrowser.open("https://claude.ai/chats")
 app = ctk.CTk(fg_color="gray10")
 app.title("JVIA")
 app.iconbitmap("Source/Icon1.ico")
